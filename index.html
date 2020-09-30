@@ -154,18 +154,15 @@ var xmlhttp = new XMLHttpRequest();
             xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             var jsonResponse = JSON.parse(this.responseText);
-        }
-        liff.sendMessages([
+          liff.sendMessages([
           {
                "type":"text",
                "text":"ลงทะเบียนเรียบร้อย"
-          },
-          {
-               "type":"text",
-               "text":"สั่งซื้อ FINCARD ได้เลย !"
           }
           
           ])
+        }
+        
         alert(jsonResponse.desc);
         liff.closeWindow()
       }});  
